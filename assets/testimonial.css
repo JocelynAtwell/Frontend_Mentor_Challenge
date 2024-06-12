@@ -1,0 +1,268 @@
+.testimonial-section {
+    padding: 40px 20px;
+    /* background-color: #f7f7f7; */
+    flex-direction: row;
+    display: flex;
+}
+
+.testimonial-header {
+    width: 55%;
+    padding: 2rem 0rem 1rem 2rem;
+}
+
+.testimonial-header h1{
+    font-size: 6rem;
+    color: #5a2a82;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-weight: bolder;
+}
+
+.testimonial-header p {
+    font-size: 1.5rem;
+    color: #7a7a7a;
+    font-weight: bold;
+    width: 45%;
+}
+
+.testimonial-ratings {
+    display: flex;
+    margin: 4rem 0rem 1rem 1rem;
+    flex-direction: column;
+}
+
+.stored-rating {
+    margin-bottom: 20px;
+}
+
+.stored-rating img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling for the ratings images so that they appear like a staircase using a pseudoclass */
+
+.stored-rating:nth-child(1) img {
+    margin-left: 0px;
+}
+
+.stored-rating:nth-child(2) img {
+    margin-left: 30px;
+}
+
+.stored-rating:nth-child(3) img {
+    margin-left: 60px;
+}
+
+/* ______________________________________________________________ */
+
+.testimonial-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.stored-testimonial {
+    background-color: #5a2a82;
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+    width: 30%;
+    height: 100%;
+    margin: 30px;
+}
+
+/* Styling so that the testimonial cards can appear like a staircase */
+
+.stored-testimonial:nth-child(1) {
+    margin-top: 0px;
+}
+
+.stored-testimonial:nth-child(2) {
+    margin-top: 30px;
+}
+
+.stored-testimonial:nth-child(3) {
+    margin-top: 60px;
+}
+
+/* ______________________________________________________________________ */
+
+.testimonial-content {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.testimonial-image img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.testimonial-info h3 {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    margin-bottom: -15px;
+    margin-left: 25px;
+}
+
+.testimonial-info p {
+    font-size: 1.5rem;
+    color: #d4a5e1;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+blockquote {
+    font-size: 1.5rem;
+    margin: 10px 0px 0px 0px;
+    color: white;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    width: 100%;
+}
+
+/* This is the styling for the mobile responsiveness*/
+
+@media (max-width: 500px) {
+    .testimonial-section {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .testimonial-header {
+        width: 100%;
+        padding: 2rem 1rem 1rem 1rem;
+    }
+
+    .testimonial-header h1{
+        font-size: 4.5rem;
+        color: #5a2a82;
+        width: 100%;
+        font-weight: bolder;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 10px 0px 10px;
+        line-height: 90%;
+    }
+    
+    .testimonial-header p {
+        font-size: 1.4rem;
+        color: #7a7a7a;
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 45px 0px 45px;
+    }
+    
+    
+    .testimonial-ratings {
+        margin: 1rem 1rem 1rem 1rem;
+        flex-direction: column;
+    }
+    
+    .stored-rating {
+        margin-bottom: 10px;
+    }
+    
+    .stored-rating img {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Styling for the ratings images so that they appear like a staircase using a pseudoclass */
+
+    .stored-rating:nth-child(1) img {
+        margin-left: 0px;
+    }
+
+    .stored-rating:nth-child(2) img {
+        margin-left: 0px;
+    }
+
+    .stored-rating:nth-child(3) img {
+        margin-left: 0px;
+    }
+
+    /* ______________________________________________________________ */
+   
+
+    .testimonial-cards {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .stored-testimonial {
+        background-color: #5a2a82;
+        color: white;
+        padding: 30px;
+        border-radius: 10px;
+        width: 90%;
+        height: 100%;
+    }
+    
+    /* Styling so that the testimonial cards can appear like a staircase */
+    
+    .stored-testimonial:nth-child(1) {
+        margin-top: 0px;
+    }
+    
+    .stored-testimonial:nth-child(2) {
+        margin-top: 0px;
+    }
+    
+    .stored-testimonial:nth-child(3) {
+        margin-top: 0px;
+    }
+    
+    /* ______________________________________________________________________ */
+    
+    .testimonial-content {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+    
+    .testimonial-image img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .testimonial-info h3 {
+        font-size: 1.2rem;
+        color: white;
+        font-weight: bold;
+        margin-bottom: -15px;
+        margin-left: 25px;
+    }
+    
+    .testimonial-info p {
+        font-size: 1.2rem;
+        color: #d4a5e1;
+        font-weight: bold;
+        margin-left: 25px;
+    }
+    
+    blockquote {
+        font-size: 1.3rem;
+        margin: 10px 0px 0px 0px;
+        color: white;
+        font-weight: 400;
+        text-align: left;
+        font-style: normal;
+        width: 100%;
+    }
+    
+}

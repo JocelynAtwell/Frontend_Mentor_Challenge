@@ -1,0 +1,137 @@
+{{ 'testimonial.css' | asset_url | stylesheet_tag }}
+
+<div class="testimonial-section">
+
+    <div class="testimonial-header">
+        <h1>{{  section.settings.heading}}</h1>
+
+        <p>{{  section.settings.paragraph }}</p>
+    </div>
+
+    <div class="testimonial-ratings">
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when "rating-image" %}
+                <div class="stored-rating" {{ block.shopify_attributes }}>
+                    <img src="{{ block.settings.rating | image_url: width: 533}}" alt="Rating image of 5 stars" width=533 height=auto>
+                </div>
+        {% endcase %}
+    {% endfor %}
+    </div>
+
+</div>
+
+<div class="testimonial-cards">
+    {% for block in section.blocks %}
+        {% case block.type %}
+
+            {% when "testimonial-card" %}
+            <div class="stored-testimonial" {{ block.shopify_attributes }}>
+
+                <!--Single Block-->
+                <div class="testimonial-content">
+                    <div class="testimonial-image">
+                        <img src="{{ block.settings.client-image | image_url: width: 533}}" alt="Client Image" width=133 height=auto>
+                    </div>
+
+                    <div class="testimonial-info">
+                        <h3>{{ block.settings.client-fullName }}</h3>
+
+                        <p>{{ block.settings.client-title }}</p>
+                    </div>
+                </div>
+
+                <blockquote>
+                    {{ block.settings.client-testimonial }}
+                </blockquote>
+
+            </div>
+    {% endcase %}
+{% endfor %}
+
+{% comment %} {% for each block %} 
+    {% if block.type == 'testimonial-card' %}
+            do this...
+    {% endif %}  
+
+    {% if block.type == 'testimonial-card' %}
+        do this...
+    {% endif %}  
+
+
+
+    {% if block.type == 'testimonial-card' %}
+        do this...
+    {% elsif block.type == 'testimonial-footer' %}
+        do this
+    {% endif %}  
+{%  endfor %} {% endcomment %}
+</div>
+
+{% schema %}
+{
+    "name": "Testimonial",
+    "settings": [
+    {
+        "type": "text",
+        "id": "heading",
+        "label": "Testimonial Heading",
+        "default": "10,000+ of our users love our products."
+    },
+    
+    {
+        "type": "text",
+        "id": "paragraph",
+        "label": "Testimonial Paragraph",
+        "default": "We only provide great products combined with excellent customer service. See what our satisfied customers are saying about our services."
+    }
+    ],
+    "blocks": 
+    [
+        {
+            "name": "Rating",
+            "type": "rating-image",
+            "settings": [
+            {
+                "type": "image_picker",
+                "id": "rating",
+                "label": "A rating"
+            }
+            ]
+        },
+        {
+            "name": "Testimonial Card",
+            "type": "testimonial-card",
+            "settings": 
+                [
+                {
+                    "type": "image_picker",
+                    "id": "client-image",
+                    "label": "Client Image"
+                },
+                {
+                    "type": "text",
+                    "id": "client-fullName",
+                    "label": "Client Fullname"
+                },
+                {
+                    "type": "text",
+                    "id": "client-title",
+                    "label": "Client Title",
+                    "default": "Verified Buyer"
+                },
+                {
+                    "type": "textarea",
+                    "id": "client-testimonial",
+                    "label": "Client Testimonial"
+                }
+                ]
+        }
+    ],
+    "presets": [
+    {
+        "name": "Testimonials"
+    }
+    ]
+}
+{% endschema %}
