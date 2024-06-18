@@ -68,7 +68,6 @@
     background-color: #5a2a82;
     color: white;
     padding: 50px;
-    border-radius: 10px;
     width: 30%;
     height: 100%;
     margin: 30px;
@@ -124,6 +123,30 @@ blockquote {
     text-align: left;
     font-style: normal;
     width: 100%;
+}
+
+.btn-view {
+    background-color: #5a2a82;
+    height: auto;
+    width:100%;
+    padding: 1rem;
+    border: none;
+    color: white;
+    border-radius: 50rem;
+    justify-content: space-around;
+    display: unset;
+}
+
+.btn-hover-view:hover {
+    background-color: white;
+    height: auto;
+    width:100%;
+    padding: 1rem;
+    border-style: solid;
+    border-color: #5a2a82;
+    color:#5a2a82;
+    border-radius: 50rem;
+    justify-content: space-around;
 }
 
 /* This is the styling for the mobile responsiveness*/

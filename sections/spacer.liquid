@@ -1,0 +1,53 @@
+{% assign mobile_height = section.settings.spacer_height | divided_by: 10 %}
+
+{% if mobile_height == 0 %}
+  {% assign mobile_height = 1 %}
+{% endif %}
+
+<div
+  class="spacer-height"
+  style=" height: {{ section.settings.spacer_height }}rem; background-color: none;"
+>
+  <p style="color: transparent">{{ section.settings.spacer_height }}</p>
+
+  {% comment %}
+    <p>Desktop Height: {{ section.settings.spacer_height }}rem</p>
+    <p>Mobile Height: {{ mobile_height }}rem</p>
+  {% endcomment %}
+</div>
+
+<style>
+  .spacer_height {
+     height: {{ section.settings.spacer_height }}rem;
+     background-color: none;
+     }
+
+  @media screen and (min-width: 0px) and (max-width: 720px) {
+    .spacer_height {
+        height:{{ mobile_height }}rem;
+                    }
+    }
+</style>
+
+{% schema %}
+{
+  "name": "Spacer",
+  "settings": [
+    {
+      "type": "range",
+      "id": "spacer_height",
+      "min": 2,
+      "max": 60,
+      "step": 2,
+      "unit": "rem",
+      "label": "Spacer",
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "Spacer"
+    }
+  ]
+}
+{% endschema %}
